@@ -580,6 +580,7 @@ $Array = [
 		s();
 		echo "
 		<div class='card card-body text-dark input-group mb-3'>
+		<u>Mass Deface</u>
 			<form method='POST'> Tipe:
 			<div class='form-check'>
 				<input class='form-check-input' type='checkbox' value='onedir' name='tipe' id='flexCheckDefault' checked>
@@ -632,6 +633,7 @@ $Array = [
 			s();
 			echo "
 			<div class='card card-body text-dark input-group mb-3'>
+			<u>Mass Delete</u>
 				<form method='POST'>
 					<i class='bi bi-folder'></i> Directory:
 					<input class='form-control btn-sm' type='text' name='d_dir' value='$dir' $_r>
@@ -692,6 +694,7 @@ $Array = [
 			s();
 			echo "
 			<div class='card card-body text-dark input-group mb-3'>
+			<u>Search By EXT</u>
 				<form method='POST'>
 				<div class='input-group d-flex gap-2'>
 					<i class='bi bi-folder'></i> Directory:
